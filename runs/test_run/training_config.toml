@@ -1,0 +1,48 @@
+[additional_network_arguments]
+unet_lr = 0.0001
+text_encoder_lr = 0.0001
+network_dim = 32
+network_alpha = 16
+network_module = "networks.lora"
+
+[optimizer_arguments]
+learning_rate = 0.001
+lr_scheduler = "cosine_with_restarts"
+lr_scheduler_num_cycles = 3
+lr_warmup_steps = 7
+optimizer_type = "AdamW8bit"
+
+[training_arguments]
+max_train_epochs = 1
+save_every_n_epochs = 1
+save_last_n_epochs = 30
+train_batch_size = 2
+clip_skip = 2
+min_snr_gamma = 5.0
+weighted_captions = false
+seed = 42
+max_token_length = 225
+xformers = true
+lowram = true
+max_data_loader_n_workers = 8
+persistent_data_loader_workers = true
+save_precision = "fp16"
+mixed_precision = "fp16"
+output_dir = "runs/test_run"
+logging_dir = "runs/test_run"
+output_name = "red_hugo_logo"
+log_prefix = "red_hugo_logo"
+save_state = false
+
+[model_arguments]
+pretrained_model_name_or_path = "pretrained_model/sd-v1-5-pruned-noema-fp16.safetensors"
+v2 = false
+
+[saving_arguments]
+save_model_as = "safetensors"
+
+[dreambooth_arguments]
+prior_loss_weight = 1.0
+
+[dataset_arguments]
+cache_latents = true

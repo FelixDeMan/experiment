@@ -1,0 +1,11 @@
+[general]
+enable_bucket = true   
+
+[[datasets]]
+resolution = 512
+  [[datasets.subsets]]
+  num_repeats = 6
+  image_dir = "/content/drive/MyDrive/Loras/red_hugo_logo/dataset"
+  class_tokens = "<red_hugo_logo> logo"
+
+
