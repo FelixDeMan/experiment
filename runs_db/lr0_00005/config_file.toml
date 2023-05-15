@@ -1,0 +1,46 @@
+[model_arguments]
+v2 = false
+v_parameterization = false
+pretrained_model_name_or_path = "runwayml/stable-diffusion-v1-5"
+
+[optimizer_arguments]
+optimizer_type = "AdamW8bit"
+learning_rate = 5e-5
+max_grad_norm = 1.0
+lr_scheduler = "constant"
+lr_warmup_steps = 0
+
+[dataset_arguments]
+cache_latents = true
+debug_dataset = false
+vae_batch_size = 1
+
+[training_arguments]
+output_dir = "runs_db/lr0_00005"
+output_name = "red_hugo_logo_db"
+save_precision = "fp16"
+save_n_epoch_ratio = 1
+save_state = false
+train_batch_size = 4
+max_token_length = 225
+mem_eff_attn = false
+xformers = true
+max_train_epochs = 30
+max_data_loader_n_workers = 8
+persistent_data_loader_workers = true
+gradient_checkpointing = false
+gradient_accumulation_steps = 1
+mixed_precision = "fp16"
+clip_skip = 2
+logging_dir = "runs_db/lr0_00005/logs"
+log_prefix = "red_hugo_logo_db"
+
+[sample_prompt_arguments]
+sample_every_n_steps = 100
+sample_sampler = "ddim"
+
+[dreambooth_arguments]
+prior_loss_weight = 1.0
+
+[saving_arguments]
+save_model_as = "safetensors"
