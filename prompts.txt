@@ -2,6 +2,6 @@ a red_hugo_logo --seed 1001
 A male model wearing a blue red_hugo_logo sweater --seed 1001
 A female model wearing a green red_hugo_logo t-shirt --seed 1001
 The latest red_hugo_logo products --seed 1001
-A billboard with the red_hugo_logo--seed 1001
+A billboard with the red_hugo_logo --seed 1001
 the new red_hugo_logo fragrance perfume --seed 1001
 a blue car --seed 1001
